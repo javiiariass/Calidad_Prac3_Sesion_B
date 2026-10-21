@@ -39,7 +39,7 @@ class CuentaTest {
 
 	@Test
 	void testReintegro() {
-		cuenta1.reintro(500);
+		cuenta1.reintegro(500);
 		assertEquals(-500, cuenta1.getSaldo());
 	}
 
