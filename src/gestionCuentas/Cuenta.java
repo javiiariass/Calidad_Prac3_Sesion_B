@@ -3,18 +3,35 @@ package gestionCuentas;
 public class Cuenta {
 	String numero;
 	String titular;
-	double saldo;
+	double saldo = 0;
 	
+	public Cuenta() {
+		this.saldo = 0;
+	}
+	
+	public Cuenta(String numero, String titular, double saldo) {
+		super();
+		this.numero = numero;
+		this.titular = titular;
+		this.saldo = saldo;
+	}
+	
+	public Cuenta(String numero, String titular) {
+		super();
+		this.numero = numero;
+		this.titular = titular;
+	}
+
 	public double getSaldo() {
 		return saldo;
 	}
 	
 	public void ingreso(double valor) {
-		saldo = 500;
+		saldo += valor;
 	}
 	
 	public void reintegro(double valor) {
-		saldo = -500;
+		saldo -= valor;
 	}
 
 	

@@ -35,12 +35,17 @@ class CuentaTest {
 	void testIngreso() {
 		cuenta1.ingreso(500);
 		assertEquals(500, cuenta1.getSaldo());
+		cuenta1.ingreso(100);
+		assertEquals(600, cuenta1.getSaldo());
+		
 	}
 
 	@Test
 	void testReintegro() {
 		cuenta1.reintegro(500);
 		assertEquals(-500, cuenta1.getSaldo());
+		cuenta1.reintegro(100);
+		assertEquals(-600, cuenta1.getSaldo());
 	}
 
 }
