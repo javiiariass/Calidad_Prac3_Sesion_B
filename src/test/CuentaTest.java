@@ -32,20 +32,39 @@ class CuentaTest {
 
 	
 	@Test
+	/**
+	 * Tests contemplanto saldo inicial a 0
+	 */
 	void testIngreso() {
 		cuenta1.ingreso(500);
 		assertEquals(500, cuenta1.getSaldo());
+		
 		cuenta1.ingreso(100);
+		assertEquals(600, cuenta1.getSaldo());
+		
+		// ingreso negativo
+		cuenta1.ingreso(-100);
 		assertEquals(600, cuenta1.getSaldo());
 		
 	}
 
 	@Test
+	/**
+	 * Tests contemplando saldo inicial a 0
+	 */
 	void testReintegro() {
+		System.out.println(cuenta1.getSaldo());
 		cuenta1.reintegro(500);
 		assertEquals(-500, cuenta1.getSaldo());
-		cuenta1.reintegro(100);
-		assertEquals(-600, cuenta1.getSaldo());
+		
+		// caso límite
+		cuenta1.reintegro(1);
+		assertEquals(-500, cuenta1.getSaldo());
+	
+		// reintegro negativo
+		cuenta1.reintegro(-100);
+		assertEquals(-500, cuenta1.getSaldo());
+		
 	}
 
 }
